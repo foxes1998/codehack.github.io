@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "欢迎来到我的个人博客"
+date:   2019-01-27 20:13:14 +0800
+thumbnail: earth.jpg
+---
+
+欢迎来到我的个人博客 `CodeHack` 本博客将不定期发布关于我个人对编程及生活的所学所想。
+
+> ## Hack Code, Hack Life, Hack Mind.
+
+希望能得到大家的支持。
+
+<figure>
+	<img src="{{ site.baseurl }}/assets/earth.jpg" alt="image">
+	<figcaption>
+		There is nothing on this earth more to be prized than true friendship.
+	</figcaption>
+</figure>
+
+如有问题可在底部通过邮箱联系我。
