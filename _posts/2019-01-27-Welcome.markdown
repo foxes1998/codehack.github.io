@@ -22,4 +22,4 @@ thumbnail: earth.jpg
 
 如有问题可在底部通过邮箱联系我。
 
-<a href="mailto:feather@codehack.life?subject={{post.title}}&body=Write down your idea ^_^ ">feather@codehack.life</a>
+<a href="mailto:feather@codehack.life?subject={{title}}&body=Write down your idea ^_^ ">feather@codehack.life</a>
