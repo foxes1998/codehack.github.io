@@ -7,6 +7,8 @@ thumbnail: earth.jpg
 
 欢迎来到我的个人博客 `CodeHack` 本博客将不定期发布关于我个人对编程及生活的所学所想。
 
+
+
 > ## Hack Code, Hack Life, Hack Mind.
 
 希望能得到大家的支持。
@@ -19,3 +21,5 @@ thumbnail: earth.jpg
 </figure>
 
 如有问题可在底部通过邮箱联系我。
+
+<a href="mailto:feather@codehack.life?subject={{post.title}}&body=Write down your idea ^_^ ">feather@codehack.life</a>
