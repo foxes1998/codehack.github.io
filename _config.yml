@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: CodeHack
-email: 1339182979@qq.com
+email: feather@codehack.life
 description: > # this means to ignore newlines until "baseurl:"
   Hack Code, Hack Life, Hack Mind.
 baseurl: "/" # the subpath of your site, e.g. /blog
