@@ -19,6 +19,7 @@ tags:	[其他, welcome]
 	<img src="{{ site.baseurl }}/assets/earth.jpg" alt="image">
 	<figcaption>
 		There is nothing on this earth more to be prized than true friendship.
+		世界上没有什么比友谊更珍贵了。
 	</figcaption>
 </figure>
 
