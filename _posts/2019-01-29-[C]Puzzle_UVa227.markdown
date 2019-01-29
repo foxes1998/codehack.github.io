@@ -48,6 +48,7 @@ tags:	[UVa, UVa227 ,Puzzle]
 > __注__ ：样本输入的第一个记录对应于上面所示的拼图。
 
 ### 输入示例
+<pre>
 TRGSJ
 XDOKI
 M VLN
@@ -68,10 +69,10 @@ PQRS
 TUVWX
 AAAAABBRRRLL0
 Z
-
+</pre>
 
 ### 示例输出
-
+<pre>
 Puzzle #1: 
 T R G S J
 X O K L I
@@ -88,7 +89,7 @@ T U V W X
 
 Puzzle #3:
 This puzzle has no final configuration.
-
+</pre>
 
 
 {% highlight c linenos %}
