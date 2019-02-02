@@ -65,7 +65,7 @@ LLLL0
 ABCDE
 FGHIJ
 KLMNO
-PQRS
+PQRS 
 TUVWX
 AAAAABBRRRLL0
 Z
@@ -94,24 +94,145 @@ This puzzle has no final configuration.
 
 {% highlight c linenos %}
 #include<stdio.h>
-int main(){
-  printf("Please wait some time...\n");
-  return 0;
-}
-// => prints: Please wait some time...
+#include<string.h>
+#define maxn1 100
+#define maxn2 10000+10
 
+int mv_Puzzle(char a[5][5],char *b){
+    int t=0,x,y,flag2=1;
+    for(x=0  ;x<5 && flag2  ;x++){
+        for(y=0  ;y<5 && flag2  ;y++){
+            if(a[x][y] == ' ')
+                flag2=0;
+        }
+    }
+    flag2=1;
+    x--;
+    y--;
+    // printf("x=%d ,y=%d ,s[x][y]=\'%c\'\n",x,y,a[x][y]);
+    while(b[t]!='0'&&flag2){
+        if(b[t]=='A'||b[t]=='B'||b[t]=='L'||b[t]=='R'){
+            if(b[t]=='A'){
+                if(x-1<0){
+                    flag2=0;
+                }else{
+                    a[x][y] = a[x-1][y];
+                    a[x-1][y] = ' ';
+                    x--;
+                }
+            }
+            if(b[t]=='B'){
+                if(x+1>5){
+                    flag2=0;
+                }else{
+                    a[x][y] = a[x+1][y];
+                    a[x+1][y] = ' ';
+                    x++;
+                }
+            }
+            if(b[t]=='L'){
+                if(y-1<0){
+                    flag2=0;
+                }else{
+                    a[x][y] = a[x][y-1];
+                    a[x][y-1] = ' ';
+                    y--;
+                }
+            }
+            if(b[t]=='R'){
+                if(y+1>5){
+                    flag2=0;
+                }else{
+                    a[x][y] = a[1][y+1];
+                    a[x][y+1] = ' ';
+                    y++;
+                }
+            }
+            t++;
+        } else
+        {
+            flag2=0;
+        }
+        
+    }
+    return flag2;
+}
+void Print_Puzzle(char a[5][5]){
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            if(j<4){
+                printf("%c ",a[i][j]);
+            } else
+                printf("%c\n",a[i][j]);
+        }
+    }
+}
+void Puzzle(){
+    int flag1=1,kase=0,m=0,p=0;
+    char s[maxn2];
+    while(1){
+        char tmp[maxn1];
+        scanf("%[^\n]%*c",tmp);
+        int len=strlen(tmp);
+        memcpy(&s[m],tmp,len);
+        m=m+len;
+        if(s[m-1]=='Z') 
+            break;
+    }
+    // printf("%s\n\n",s);
+    while(flag1){
+        char a[5][5]={'\0'},b[maxn1]={'\0'};
+        for(int i=0;i<5&&flag1;i++){
+            for(int j=0;j<5&&flag1;j++){
+                a[i][j]=s[p++];
+                if(a[0][0]=='Z'){
+                    flag1 = 0;
+                }
+            }
+        }
+        if(!flag1)   break;
+        int t=-1;
+        do
+        {
+            b[++t]=s[p++];
+        } while (b[t]!='0');
+        // printf("\n%s\n\n",b);
+        if(kase) 
+            printf("\n");
+        printf("Puzzle #%d:\n",++kase);
+        if(mv_Puzzle(a,b)){
+            Print_Puzzle(a);
+        } else 
+            printf("This puzzle has no final configuration.\n");
+    }
+}
+
+int main(){
+    Puzzle();
+    // char s[maxn1];
+    // scanf("%[^\n]",s); //读取单行，应该等价于 gets(); 
+    //据说 ansi c 里面没有 gets();或者是算法竞赛不允许用
+    // printf("%s\n",s);
+    return 0;
+}
 {% endhighlight %}
 
 每文一言：
 <figure>
-	<img src="{{ site.baseurl }}/assets/earth.jpg" alt="image">
+	<img src="{{ site.baseurl }}/assets/space.jpg" alt="image">
 	<figcaption>
-		There is nothing on this earth more to be prized than true friendship.
-		世界上没有什么比友谊更珍贵了。
+		Don't aim for success if you want it; just do what you love and believe in, and it will come naturally.<br/>
+		如果你想要成功，不要去追求成功；尽管做你自己热爱的事情并且相信它，成功自然到来。
 	</figcaption>
 </figure>
 
-抱歉，代码尚未完成，本文暂时作为为测试 Markdown 语法所用。
+* * *
+- - -
+更新于2019-02-02 23:20
+- - -
+添加上了我自己的代码，预计明日会加上比较完整的思路解析
+* * *
+
 
 如有问题可在底部通过邮箱联系我。
 
