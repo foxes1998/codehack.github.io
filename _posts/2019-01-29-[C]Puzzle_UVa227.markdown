@@ -227,9 +227,9 @@ int main(){
 </figure>
 
 * * *
-<hr size=6>
+<hr style="height:6px"/>
 更新于2019-02-02 23:20
-<hr size=6>
+<hr style="height:6px"/>
 添加上了我自己的代码，预计明日会加上比较完整的思路解析
 * * *
 
