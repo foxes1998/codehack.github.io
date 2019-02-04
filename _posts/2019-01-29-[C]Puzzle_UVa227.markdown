@@ -209,10 +209,6 @@ void Puzzle(){
 
 int main(){
     Puzzle();
-    // char s[maxn1];
-    // scanf("%[^\n]",s); //读取单行，应该等价于 gets(); 
-    //据说 ansi c 里面没有 gets();或者是算法竞赛不允许用
-    // printf("%s\n",s);
     return 0;
 }
 {% endhighlight %}
