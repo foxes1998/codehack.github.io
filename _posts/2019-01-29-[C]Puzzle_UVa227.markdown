@@ -373,7 +373,7 @@ void Print_Puzzle(char a[5][5]){
 * * *
 * * *
 
-如有问题可在底部通过邮箱联系我。
+如有问题或者对代码有更好的改进建议可在底部通过邮箱直接联系我。乐意收到来信。
 
 <a href="mailto:feather@codehack.life?subject=[re]{{page.title}}&body=Article_url:  {{ site.url }}{{ page.url }} ">feather@codehack.life</a>
 
