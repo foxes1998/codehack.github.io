@@ -1123,7 +1123,7 @@ a.play-icon.popup-with-zoom-anim {
     -ms-transition: 0.5s all;
     font-family: 'Lato', sans-serif;
 }
-.contact input[type="submit"]:hover{
+.contact input[type="submit"]:hover {
 	background: none; 
 	border-color:#fff;
 }
@@ -1393,10 +1393,10 @@ form ul {
 	color:#bb3756;
 	background:none;
 }
-.payment-sendbtns input[type="submit"]{
+.payment-sendbtns input[type="submit"] {
 	background:#03a9f4;  
 }
-.payment-sendbtns input[type="submit"]:hover{ 
+.payment-sendbtns input[type="submit"]:hover { 
 	color:#03a9f4;
 	background:none;
 }

@@ -169,7 +169,7 @@ void Print_Puzzle(char a[5][5]){
 }
 void Puzzle(){
     int flag1=1,kase=0,m=0,p=0;
-    char s[maxn2];
+    char s[maxn2]={'\0};
     while(1){
         char tmp[maxn1];
         scanf("%[^\n]%*c",tmp);
@@ -213,6 +213,139 @@ int main(){
 }
 {% endhighlight %}
 
+## 代码解释
+### 主函数（main函数）：
+直接调用 Puzzle 函数（也可以选择将 Puzzle 函数的所有内容复制到main 函数中）
+### Puzzle() 函数：
+{% highlight c linenos %}
+    while(1){
+        char tmp[maxn1];
+        scanf("%[^\n]%*c",tmp);
+        int len=strlen(tmp);
+        memcpy(&s[m],tmp,len);
+        m=m+len;
+        if(s[m-1]=='Z') 
+            break;
+    }
+{% endhighlight %}
+
+此段为读取所有输入，将其存入字符数组 s （过滤掉换行符），其中用 tmp 字符数组读取每行内容，再加入数组 s 。其中` scanf("%[^\n]%*c",tmp); ` 效果等价于` gets(); ` ，仅作知识补充。若输入为上面的 示例 输入，则输出 s 为： `TRGSJXDOKIM VLNWPABEUQHCFARRBBL0ABCDEFGHIJKLMNOPQRS TUVWXAAALLLL0ABCDEFGHIJKLMNOPQRS TUVWXAAAAABBRRRLL0Z` 。
+
+{% highlight c linenos %}
+        for(int i=0;i<5 && flag1;i++){
+            for(int j=0;j<5 && flag1;j++){
+                a[i][j]=s[p++];
+                if(a[0][0]=='Z'){
+                    flag1 = 0;
+                }
+            }
+        }
+        if(!flag1)   break;
+{% endhighlight %}
+在接下来的永久循环中，先从数组 s 循环读取数据存入数组 a ，并检查数组第一个元素是否为结束标志 'Z' ，如果是则退出(多个)循环，就退出了程序；否则数组 a 存入的则为 5*5 的 Puzzle 数据。
+
+{% highlight c linenos %}
+        int t=-1;
+        do
+        {
+            b[++t]=s[p++];
+        } while (b[t]!='0');
+{% endhighlight %}
+此处为将对 Puzzle 的操作序列存入 b 数组。每存入一个数据，检查其是否为 '0' ，是则停止存入。
+
+{% highlight c linenos %}
+        int kase=0;
+
+        ......
+
+        if(kase) 
+            printf("\n");
+        printf("Puzzle #%d:\n",++kase);
+{% endhighlight %}
+初始设置` kase=0 `，用于统计 Puzzle 的组数，上面片段的第五行获取当前已输出的组数，如果为 0 则不输出换行否则输出换行【题目要求两个数据组中间需要空行】。接下来输出提示语` printf("Puzzle #%d:\n",++kase); `，这里等价于` { kase = kase +1 ;printf("Puzzle #%d:\n",kase);} `。
+
+{% highlight c linenos %}
+        if(mv_Puzzle(a,b)){
+            Print_Puzzle(a);
+        } else 
+            printf("This puzzle has no final configuration.\n");
+{% endhighlight %}
+接下来调用` mv_Puzzle(char a[5][5],char *b) `对数组 a(Puzzle) 的中的空格按照 b 的指令序列进行操作，如果遇到非法操作则返回 0 ，否则返回 1 ；如果返回 1 ，则调用` Print_Puzzle(); `输出经过操作序列后的 Puzzle ，否则输出无最终布局的提示` This puzzle has no final configuration.\n `。
+
+### mv_Puzzle() 函数
+{% highlight c linenos %}
+    for(x=0  ;x<5 && flag2  ;x++){
+        for(y=0  ;y<5 && flag2  ;y++){
+            if(a[x][y] == ' ')
+                flag2=0;
+        }
+    }
+    flag2=1;
+    x--;
+    y--;
+{% endhighlight %}
+此处在 Puzzle 中寻找出空格数据所在坐标。为什么在最后还要进行` x--;y--; `呢？因为 `for` 语句的执行顺序为：
+> 1. 初始化(此处为执行 `x=0;` )
+>
+> 2. 判断是否满足循环条件(此处为判断 `x<5 && flag2;` 的结果)
+>
+> 3. 执行循环体(为大括号中内容)
+>
+> 4. 执行增值变化(此处为 `x++`)
+>
+> 5. 判断是否满足循环条件(此处为判断 `x<5 && flag2;` 的结果)
+>
+> 6. 执行循环体(为大括号中内容)
+>
+> 7. 执行增值变化(此处为 `x++`)
+>
+> 9. ...
+
+相信大家已经知道原因了：由于我设置的跳出循环的方法为将标志符改变，则会在标志符改变后先将 x与y 的值增加1，再去判断循环条件，所以退出后需要将增加的值减去。当然你可以进行优化【相信你有方法了】。
+
+{% highlight c linenos %}
+    while(b[t]!='0'&&flag2){
+        if(b[t]=='A'||b[t]=='B'||b[t]=='L'||b[t]=='R'){
+            if(b[t]=='A'){
+                if(x-1<0){
+                    flag2=0;
+                }else{
+                    a[x][y] = a[x-1][y];
+                    a[x-1][y] = ' ';
+                    x--;
+                }
+            }
+
+        ......
+
+            t++;
+        } else
+        {
+            flag2=0;
+        }
+        
+    }
+{% endhighlight %}
+此循环中将对 Puzzle 中的空格进行移动。循环条件为当前操作指令不为 '0' 且标志符不为 0 ；接下来判断指令是否为 'A'、'B'、'L'或'R'中的，否则为非法指令，若为非法指令则标志符为 0 ；否则继续根据指令进行判断，如果不符合移动条件，即移动会越界，则标记为非法移动，将标志符改为 0 ；否则进行移动操作：` a[x][y] = a[x-1][y];a[x-1][y] = ' ';x--; `。
+当循环结束后返回标志符。
+
+### Print_Puzzle() 函数
+{% highlight c linenos %}
+void Print_Puzzle(char a[5][5]){
+    for(int i=0;i<5;i++){
+        for(int j=0;j<5;j++){
+            if(j<4){
+                printf("%c ",a[i][j]);
+            } else
+                printf("%c\n",a[i][j]);
+        }
+    }
+}
+{% endhighlight %}
+将 Puzzle 内容输出。每行中每两个 Puzzle 字符间要空格间隔，末尾不能有空格，故在每行前4个后带空格，最后一个带换行。
+
+讲解结束。
+
 每文一言：
 <figure>
 	<img src="{{ site.baseurl }}/assets/space.jpg" alt="image">
@@ -230,6 +363,12 @@ int main(){
 更新于2019-02-02 23:20
 * * *
 添加上了我自己的代码，预计明日会加上比较完整的思路解析
+<br/>
+<br/>
+* * *
+更新于2019-02-05 18:35
+* * *
+抱歉，各位，由于过年较忙，没时间编辑博文，所以推到今日更新代码解析，另外说明以后我将渐渐地减少篇幅写代码解析，最后转为概括性的表述代码思路。
 <br/>
 * * *
 * * *
