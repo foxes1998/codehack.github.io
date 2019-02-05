@@ -1,24 +1,8 @@
-# Libretto - Jekyll Theme
+人生充满乐趣，凡美好的事物都值得记录。大家好，欢迎来到我的个人博客 `CodeHack` ，我是一个普通的学生，对算法、python、go、人工智能有浓厚的兴趣，我的博客将不定期发布关于我个人对编程及生活的所学所思，欢迎各位阅读我的博文，更欢迎各位能给我提出宝贵的意见，谢谢！
 
-Libretto is a responsive one-column Jekyll theme with classic styling and careful typographic details.
+>
+> ## Hack Code, Hack Life, Hack Mind.
+>
 
-Based on the [Libretto Wordpress theme](https://wordpress.org/themes/libretto/).
-
-## Install and Test
-
-1. Download or clone the repo
-  - `git clone git@github.com:ferrolho/jekyll-theme-libretto.git`
-2. Enter the folder
-  - `cd jekyll-theme-libretto/`
-3. Start Jekyll server
-  - `jekyll serve --watch`
-4. Access via
-  - http://127.0.0.1:4000/jekyll-theme-libretto/
-
-## Demo
-
-- https://ferrolho.github.io/jekyll-theme-libretto/
-
-## Preview
-
-![Theme preview](http://i.imgur.com/2ZCmoKo.png)
+本博客由 [Jekyll](https://jekyllrb.com) 引擎驱动，使用基于 [Wordpress Libretto](https://wordpress.org/themes/libretto/) 迁移的主题。
+具体详见：[github](https://github.com/ferrolho/jekyll-theme-libretto)
