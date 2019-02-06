@@ -3,7 +3,7 @@ layout: post
 title:  "[C]Puzzle_UVa227"
 date:   2019-01-29 19:00:00 +0800
 categories:	[UVa]
-tags:	[UVa, UVa227 ,Puzzle]
+tags:	[UVa, UVa227, Puzzle, 算法]
 ---
 此题来自 UVa(UVa Online Judge, 西班牙Valladolid大学的Online Judge。是最古老也是全世界最知名的Online Judge)，题号为 UVa227 ，同时也是*刘汝佳*大佬在《算法入门》所给的第三章练习题之一。
 
@@ -229,7 +229,7 @@ int main(){
     }
 {% endhighlight %}
 
-此段为读取所有输入，将其存入字符数组 s （过滤掉换行符），其中用 tmp 字符数组读取每行内容，再加入数组 s 。其中` scanf("%[^\n]%*c",tmp); ` 效果等价于` gets(); ` ，仅作知识补充。若输入为上面的 示例 输入，则输出 s 为： `TRGSJXDOKIM VLNWPABEUQHCFARRBBL0ABCDEFGHIJKLMNOPQRS TUVWXAAALLLL0ABCDEFGHIJKLMNOPQRS TUVWXAAAAABBRRRLL0Z` 。
+此段为读取所有输入，将其存入字符数组 s （过滤掉换行符），其中用 tmp 字符数组读取每行内容，再加入数组 s 。其中` scanf("%[^\n]%*c",tmp); ` 效果等价于` gets(); ` ，仅作知识补充【如欲继续了解可阅读底部[参考文献](#links)】。若输入为上面的 示例 输入，则输出 s 为： `TRGSJXDOKIM VLNWPABEUQHCFARRBBL0ABCDEFGHIJKLMNOPQRS TUVWXAAALLLL0ABCDEFGHIJKLMNOPQRS TUVWXAAAAABBRRRLL0Z` 。
 
 {% highlight c linenos %}
         for(int i=0;i<5 && flag1;i++){
@@ -355,6 +355,12 @@ void Print_Puzzle(char a[5][5]){
 	</figcaption>
 </figure>
 
+<h4 id="links">参考文献:</a>
+[scanf读取含空格的字符串](https://blog.csdn.net/chuhe163/article/details/81048751)
+
+[维基百科：格式化字符串](https://zh.wikipedia.org/wiki/格式化字符串)
+
+[维基百科：正则表达式](https://zh.wikipedia.org/wiki/正则表达式)
 
 * * *
 * * *
