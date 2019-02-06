@@ -356,9 +356,9 @@ void Print_Puzzle(char a[5][5]){
 </figure>
 
 <h4 id="links">参考文献(部分链接需要科學上網):</h4>
-[scanf读取含空格的字符串](https://blog.csdn.net/chuhe163/article/details/81048751)
-[维基百科：格式化字符串](https://zh.wikipedia.org/wiki/格式化字符串)
-[维基百科：正则表达式](https://zh.wikipedia.org/wiki/正则表达式)
+1. [scanf读取含空格的字符串](https://blog.csdn.net/chuhe163/article/details/81048751)
+2. [维基百科：格式化字符串](https://zh.wikipedia.org/wiki/格式化字符串)
+3. [维基百科：正则表达式](https://zh.wikipedia.org/wiki/正则表达式)
 
 * * *
 * * *
