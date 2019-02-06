@@ -382,4 +382,4 @@ void Print_Puzzle(char a[5][5]){
 <a href="mailto:feather@codehack.life?subject=[re]{{page.title}}&body=Article_url:  {{ site.url }}{{ page.url }} ">feather@codehack.life</a>
 
 [原题目链接(英文)]: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=4&page=show_problem&problem=163
-[题目原文档(英文)]: {{ site.baseurl }}/includes/UVa/201-300/UVa227.pdf
+[题目原文档(英文)]: https://u19417164.ctfile.com/fs/19417164-334684267
