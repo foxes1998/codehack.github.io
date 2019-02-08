@@ -27,7 +27,7 @@ tags:	[UVa, UVa227, Puzzle, 算法]
 >
 >> 6) 空格左侧的方块移动
 >
-> ![示例图片]({{ site.baseurl }}/includes/UVa/201-300/example.png)
+> ![示例图片]({{ site.baseurl }}/includes/UVa/201-300/UVa227/example.png)
 
 > 编写一个程序来显示给定初始布局和移动顺序的结果帧。
 
