@@ -348,7 +348,7 @@ void Print_Puzzle(char a[5][5]){
 
 每文一言：
 <figure>
-	<img src="{{ site.baseurl }}/assets/space.jpg" alt="image">
+	<img src="https://i.loli.net/2019/02/09/5c5ee7e41072d.jpg" alt="image">
 	<figcaption>
 		Don't aim for success if you want it; just do what you love and believe in, and it will come naturally.<br/>
 		如果你想要成功，不要去追求成功；尽管做你自己热爱的事情并且相信它，成功自然到来。

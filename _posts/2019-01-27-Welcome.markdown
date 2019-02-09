@@ -16,7 +16,7 @@ tags:	[其他, welcome]
 
 每文一言：
 <figure>
-	<img src="{{ site.baseurl }}/assets/earth.jpg" alt="image">
+	<img src="https://i.loli.net/2019/02/09/5c5ee37d7c35a.jpg" alt="image">
 	<figcaption>
 		There is nothing on this earth more to be prized than true friendship.<br/>
 		世界上没有什么比友谊更珍贵了。
